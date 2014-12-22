@@ -80,4 +80,4 @@ My goal with this package is to keep it simple, similar to core packages like [R
 
 As such, it may already have everything it needs.
 
-**Please create issues and discuss potential contributions before creating a pull request.**
+**Please create issues to discuss feature contributions before creating a pull request.**
