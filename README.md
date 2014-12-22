@@ -41,7 +41,7 @@ Show what's been added to the array you created in your template.
 ```javascript
 Template.myTemplate.helpers({
   clickedItems: function () {
-    Template.instance().array.get();
+    return Template.instance().array.get();
   }
 });
 ```
