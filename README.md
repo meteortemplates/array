@@ -8,11 +8,15 @@ This package works on the client-side only.
 Examples
 --------
 
+### Basic use
+
 Create a new reactive array.
 
 ```javascript
 var array = new ReactiveArray();
 ```
+
+### Use with templates
 
 Create a new reactive array scoped to a template.
 
@@ -49,21 +53,21 @@ You have access to all the usual Array prototype methods--I've made them reactiv
 
 `'pop', 'push', 'reverse', 'shift', 'sort', 'slice', 'unshift', 'splice'`
 
-#### ReactiveArray.get()
+### ReactiveArray.get()
 
 This will get the current value of the array and establish a reactive dependency.
 
-#### ReactiveArray.set()
+### ReactiveArray.set()
 
 This will set the value of the array, and replace whatever was there before. Dependent computations will rerun.
 
-#### ReactiveArray.pushArray()
+### ReactiveArray.pushArray()
 
 This is a special method that will push an entire array onto the existing array.
 
 It's equivalent to `array = array.concat([/* ... */])` and is reactive.
 
-#### ReactiveArray.getNonReactive()
+### ReactiveArray.getNonReactive()
 
 This will get the current value of the array and _will not_ establish a reactive dependency.
 
