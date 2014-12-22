@@ -31,7 +31,7 @@ Add things to the array you created in your template.
 ```javascript
 Template.myTemplate.events({
   'click .item': function (e, t) {
-    t.push(e.target.value);
+    t.array.push(e.target.value);
   }
 });
 ```
