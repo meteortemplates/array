@@ -16,7 +16,7 @@ Create a new reactive array.
 var array = new ReactiveArray();
 ```
 
-### Use with templates
+### Template use
 
 Create a new reactive array scoped to a template.
 
