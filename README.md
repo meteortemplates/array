@@ -76,8 +76,8 @@ Contributors
 
 * [Jon James](http://github.com/jonjamz)
 
-My goal with this package is to keep it simple, similar to core packages like `ReactiveVar`.
+My goal with this package is to keep it simple, similar to core packages like [ReactiveVar](http://docs.meteor.com/#/full/reactivevar).
 
-It may already have everything it needs.
+As such, it may already have everything it needs.
 
 *Please create issues and discuss potential contributions before creating a pull request.*
