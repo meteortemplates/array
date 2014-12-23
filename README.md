@@ -53,21 +53,21 @@ You have access to all the usual Array prototype methods--I've made them reactiv
 
 `'pop', 'push', 'reverse', 'shift', 'sort', 'slice', 'unshift', 'splice'`
 
-##### ReactiveArray.get()
+**ReactiveArray.get()**
 
 > Get the current value of the array and establish a reactive dependency.
 
-##### ReactiveArray.set()
+**ReactiveArray.set()**
 
 > Set the value of the array, replacing any existing value.
 
-##### ReactiveArray.pushArray()
+**ReactiveArray.pushArray()**
 
 > Push an array onto the existing array.
 
 Equivalent to `array = array.concat([/* ... */])`, but reactive.
 
-##### ReactiveArray.getNonReactive()
+**ReactiveArray.getNonReactive()**
 
 > Get the current value of the array without establishing a reactive dependency.
 
