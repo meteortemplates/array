@@ -29,7 +29,7 @@
     check(array, Array)
 
     # Avoid triggering reactivity if the value hasn't changed
-    unless _.difference(_array, array).length
+    if _.intersection(_array, array).length != array.length or !array.length
       _array = array
       _arrayDep.changed()
     return
