@@ -1,7 +1,7 @@
 Package.describe({
   name: 'templates:array',
   summary: 'Safe reactive arrays.',
-  version: '1.0.0',
+  version: '1.0.1',
   git: 'https://github.com/meteortemplates/array.git'
 });
 
