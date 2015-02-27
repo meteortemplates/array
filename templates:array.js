@@ -28,7 +28,7 @@ this.ReactiveArray = ReactiveArray = function(value) {
   };
   ifc.set = function(array) {
     check(array, Array);
-    if (_.intersection(array, _array).length != array.length || !array.length ) {
+    if (!_.isEqual(array, _array)) {
       _array = array;
       _arrayDep.changed();
     }
