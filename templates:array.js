@@ -1,47 +1,51 @@
-ReactiveArray;
-
-this.ReactiveArray = ReactiveArray = function(value) {
-  var ifc, method, _addWrappedPrototypeMethod, _array, _arrayDep, _i, _len, _methods;
-  if (!(this instanceof ReactiveArray)) {
-    return new ReactiveArray;
-  }
+ReactiveArray = function(value) {
   check(value, Match.Optional(Array));
-  ifc = {};
-  _addWrappedPrototypeMethod = function(method) {
-    return ifc[method] = function() {
-      _arrayDep.changed();
-      return Array.prototype[method].apply(_array, arguments);
-    };
-  };
-  _array = value || [];
-  _arrayDep = new Tracker.Dependency;
-  _methods = ['pop', 'push', 'reverse', 'shift', 'sort', 'slice', 'unshift', 'splice'];
-  for (_i = 0, _len = _methods.length; _i < _len; _i++) {
-    method = _methods[_i];
-    _addWrappedPrototypeMethod(method);
+
+  this._array = value || [];
+
+  this._arrayDep = new Tracker.Dependency;
+
+  this._methods = ['pop', 'push', 'reverse', 'shift', 'sort', 'slice', 'unshift', 'splice'];
+
+  for(var i=0;i<=this._methods.length;i++){
+    this._addWrappedPrototypeMethod(this._methods[i]);
   }
-  ifc.get = function() {
-    if (Tracker.active) {
-      _arrayDep.depend();
-    }
-    return _array;
+}
+
+ReactiveArray.prototype._addWrappedPrototypeMethod = function(method) {
+  var self = this;
+  this[method] = function() {
+    self._arrayDep.changed();
+    return Array.prototype[method].apply(self._array, arguments);
   };
-  ifc.set = function(array) {
-    check(array, Array);
-    if (!_.isEqual(array, _array)) {
-      _array = array;
-      _arrayDep.changed();
-    }
-  };
-  ifc.pushArray = function(array) {
-    check(array, Array);
-    if (!!array.length) {
-      _array = _array.concat(array);
-      _arrayDep.changed();
-    }
-  };
-  ifc.getNonReactive = function() {
-    return _array;
-  };
-  return ifc;
-};
+}
+
+ReactiveArray.prototype.get = function() {
+  if (Tracker.active) {
+    this._arrayDep.depend();
+  }
+  return this._array;
+}
+
+ReactiveArray.prototype.set = function(array) {
+  check(array, Array);
+  if (!_.isEqual(array, this._array)) {
+    this._array = array;
+    this._arrayDep.changed();
+  }
+}
+
+ReactiveArray.prototype.pushArray = function(array) {
+  check(array, Array);
+  if (!!array.length) {
+    this._array = this._array.concat(array);
+    this._arrayDep.changed();
+  }
+}
+
+ReactiveArray.prototype.getNonReactive = function() {
+  return this._array;
+}
+
+ReactiveArray.prototype.constructor = ReactiveArray;
+
