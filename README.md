@@ -75,6 +75,7 @@ Contributors
 ------------
 
 * [Jon James](http://github.com/jonjamz)
+* [Andrew Reedy](http://github.com/andrewreedy)
 
 My goal with this package is to keep it simple, similar to core packages like [ReactiveVar](http://docs.meteor.com/#/full/reactivevar).
 
